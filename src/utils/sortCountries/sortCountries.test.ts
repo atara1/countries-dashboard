@@ -30,40 +30,54 @@ const base: Country[] = [
 ];
 
 describe("countrySort", () => {
-  it("sorts by name ascending", () => {
-    const sort: SortState = { key: "name", direction: "asc" };
+  describe("sortCountries", () => {
+    describe("when sorting by name", () => {
+      it("sorts ascending", () => {
+        const sort: SortState = { key: "name", direction: "asc" };
 
-    const result = sortCountries(base, sort);
+        const result = sortCountries(base, sort);
 
-    expect(result.map((c) => c.name)).toEqual(["Argentina", "Israel", "Italy"]);
-  });
+        expect(result.map((c) => c.name)).toEqual([
+          "Argentina",
+          "Israel",
+          "Italy",
+        ]);
+      });
 
-  it("sorts by name descending", () => {
-    const sort: SortState = { key: "name", direction: "desc" };
+      it("sorts descending", () => {
+        const sort: SortState = { key: "name", direction: "desc" };
 
-    const result = sortCountries(base, sort);
+        const result = sortCountries(base, sort);
 
-    expect(result.map((c) => c.name)).toEqual(["Italy", "Israel", "Argentina"]);
-  });
+        expect(result.map((c) => c.name)).toEqual([
+          "Italy",
+          "Israel",
+          "Argentina",
+        ]);
+      });
+    });
 
-  it("sorts by population ascending", () => {
-    const sort: SortState = { key: "population", direction: "asc" };
+    describe("when sorting by population", () => {
+      it("sorts ascending", () => {
+        const sort: SortState = { key: "population", direction: "asc" };
 
-    const result = sortCountries(base, sort);
+        const result = sortCountries(base, sort);
 
-    expect(result.map((c) => c.population)).toEqual([
-      9000000, 45000000, 59000000,
-    ]);
-  });
+        expect(result.map((c) => c.population)).toEqual([
+          9000000, 45000000, 59000000,
+        ]);
+      });
 
-  it("sorts by population descending", () => {
-    const sort: SortState = { key: "population", direction: "desc" };
+      it("sorts descending", () => {
+        const sort: SortState = { key: "population", direction: "desc" };
 
-    const result = sortCountries(base, sort);
+        const result = sortCountries(base, sort);
 
-    expect(result.map((c) => c.population)).toEqual([
-      59000000, 45000000, 9000000,
-    ]);
+        expect(result.map((c) => c.population)).toEqual([
+          59000000, 45000000, 9000000,
+        ]);
+      });
+    });
   });
 
   it("does not mutate the input array", () => {
