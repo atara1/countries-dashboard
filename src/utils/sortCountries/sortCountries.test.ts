@@ -29,8 +29,7 @@ const base: Country[] = [
   },
 ];
 
-describe("countrySort", () => {
-  describe("sortCountries", () => {
+describe("sortCountries", () => {
     describe("when sorting by name", () => {
       it("sorts ascending", () => {
         const sort: SortState = { key: "name", direction: "asc" };
@@ -78,7 +77,6 @@ describe("countrySort", () => {
         ]);
       });
     });
-  });
 
   it("does not mutate the input array", () => {
     const sort: SortState = { key: "name", direction: "asc" };
