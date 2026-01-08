@@ -16,6 +16,7 @@ The app allows searching and sorting countries.
 - Vite
 - Vitest + Testing Library
 - Material UI (MUI)
+- React Query
 - Docker + Nginx
 
 ## Components Overview
